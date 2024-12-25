@@ -1,50 +1,48 @@
-# React + TypeScript + Vite
+<h1 align="center">Recipe App </h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
 
-Currently, two official plugins are available:
+**(React, Typescript, RapidAPI, Redux Toolkit)** 
+</div>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+![alt text](readme.png)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Project Overview
 
-- Configure the top-level `parserOptions` property like this:
+The Recipe App is a platform that allows users to discover and share recipes. It leverages the Spoonacular API to provide a rich database of recipes for users to explore. 
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+This project is part of the **TechloSet Bootcamps** under the Coding Bootcamp 7.0 list.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Tech Stack
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+[![My Skills](https://skillicons.dev/icons?i=vite,react,tailwind,redux,)](https://skillicons.dev)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+This is the template of 'Recipe App', all data used is fetched from **RapidAPI**, and ***react** via vite* is used along with **Typescript** and states are managed by **redux toolkit**.
+
+## Features
+
+- **Home Page**: Displays featured recipes and includes a search bar for finding recipes.
+- **Recipe Listings**: Paginated list of recipes for easy browsing.
+- **Recipe Details**: Detailed view of each recipe, including related recipes.
+
+## Project Structure
+
+- **TypeScript**: Ensure type safety by avoiding `any` or `unknown` types.
+- **Naming Conventions**: Follow consistent naming conventions for variables, functions, and components.
+- **File Organization**: Organize files into designated folders for components, styles, and utilities.
+
+## License
+
+This project is licensed under the **MIT License**.
+
+
+
+[comment]: <> (Ending section)
+<p align="center">
+  <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60" style="vertical-align: middle; margin-right: 10px;">
+  <span style="vertical-align: middle;">
+    <em><b>I genuinely enjoy connecting with new people</b>, so if you'd like to say <b>hi, I'd be delighted to get to know you better!</b> </em>
+    <a href="https://linkedin.com/in/arslan-ahmad-dev">Let's talk</a>🙃
+  </span>
+</p>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import SeachBar from "../SearchBar";
 import { NavLink } from "./NavLink";
 import { Link } from "react-router-dom";
