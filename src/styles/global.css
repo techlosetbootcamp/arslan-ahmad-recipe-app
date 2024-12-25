@@ -1,0 +1,5 @@
+
+
+.content-w {
+  @apply max-w-[1,286px];
+}
