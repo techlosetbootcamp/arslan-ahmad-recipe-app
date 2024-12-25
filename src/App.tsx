@@ -6,6 +6,7 @@ import Recipes from "./pages/Recipes";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import SingleRecipe from "./pages/SingleRecipe";
 
 const AppRouter: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const AppRouter: React.FC = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/recipes" element={<Recipes />} />
+          <Route path="/recipes/:id" element={<SingleRecipe />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

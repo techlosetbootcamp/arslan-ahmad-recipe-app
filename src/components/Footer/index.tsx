@@ -1,14 +1,17 @@
-// import { ReactComponent as InstagramIcon } from "/icons/youtube.svg";
-// import { ReactComponent as TwitterIcon } from "./icons/twitter.svg";
+// import InstagramIcon from "/icons/youtube.svg";
+// import TwitterIcon from "../src/assets/icons/logo.svg";
+import YoutubeIcon from "../IconComponents/Youtube";
+import BrowserIcon from "../IconComponents/Browser";
+import PinterestIcon from "../IconComponents/Pinterest";
 // import { ReactComponent as FacebookIcon } from "./icons/facebook.svg";
 
 import FooterLink from "./FooterLink";
 
 const Footer = () => {
   const socialMediaLinks = [
-    // { name: "Instagram", href: "https://instagram.com", icon: <InstagramIcon /> },
-    { name: "Twitter", href: "https://twitter.com", icon: "🐦" },
-    { name: "Facebook", href: "https://facebook.com", icon: "📘" },
+    { name: "Instagram", href: "https://instagram.com", icon: <YoutubeIcon /> },
+    { name: "Twitter", href: "https://twitter.com", icon: <BrowserIcon /> },
+    { name: "Facebook", href: "https://facebook.com", icon: <PinterestIcon /> },
   ];
 
   return (
@@ -20,7 +23,9 @@ const Footer = () => {
           src="../src/assets/icons/logo.svg"
           alt="Delícias à Mesa logo"
         />
-        <p className="font-bold hidden sm:block text-[5vw] lg:text-[46.13px]">Delícias&nbsp;à&nbsp;Mesa</p>
+        <p className="font-bold hidden sm:block text-[5vw] lg:text-[46.13px]">
+          Delícias&nbsp;à&nbsp;Mesa
+        </p>
       </div>
 
       {/* Social Media Section */}
