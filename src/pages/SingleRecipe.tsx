@@ -21,6 +21,8 @@ const SingleRecipe: React.FC = () => {
 
   // Fetch recipes if not already loaded
   useEffect(() => {
+    window.scrollTo(0, 0);
+    
     if (recipes.length === 0) {
       dispatch(fetchRecipesData());
     }
@@ -40,7 +42,7 @@ const SingleRecipe: React.FC = () => {
       <Banner bannerText={recipe.name} bannerImage={recipe.thumbnail_url} />
 
       <section className="container mx-auto p-12">
-        {recipe.total_time_minutes && (
+        {recipe.total_time_minutes ? (
           <>
             <div className="text-slate-900 font-semibold text-center mt-6">
               (Ready Within:{" "}
@@ -48,8 +50,8 @@ const SingleRecipe: React.FC = () => {
                 {recipe.total_time_minutes} minutes
               </span>)
             </div>
-          </>
-        )}
+          </> 
+        ) : null}
 
         {/* Ingredients Section */}
         {recipe.sections[0].components && (

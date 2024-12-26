@@ -15,15 +15,15 @@ const Card: React.FC<CardProps> = ({ type = "vertical", imageSrc, text, head, bu
     <div
       className={`${
         type === "vertical"
-          ? "lg:max-w-[403px] lg:flex-col h-[500.68px]"
-          : "lg:max-w-[1187px] lg:flex-row"
-      } flex rounded-[33px] overflow-hidden shadow-sm flex-col max-w-[380px] bg-[#F5F2F2]`}
+          ? "md:max-w-[403px] md:flex-col"
+          : "md:max-w-[1187px] md:flex-row md:h-[322px]"
+      } flex rounded-[33px] h-[500.68px] overflow-hidden shadow-sm flex-col max-w-[380px] bg-[#F5F2F2]`}
     >
-      <img src={imageSrc} className={`object-cover w-full ${type === 'vertical'? 'h-[212.04px]' : 'w-[403px]'}`} alt="featured_image" />
-      <div className={`flex flex-col text-start ${type === 'vertical'? 'px-4 pt-2 h-[261.64px] justify-between' : 'h-[212.04px] w-[784px] justify-center p-12'}`}>
+      <img src={imageSrc} className={`object-cover w-full h-[212.04px] ${type !== 'vertical' && 'md:h-full md:max-w-[403px] md:w-[45%]'}`} alt="featured_image" />
+      <div className={`flex flex-col text-start px-4 pt-2 h-[261.64px] justify-between ${type === 'vertical'? 'px-4 pt-2 h-[261.64px] justify-between' : 'md:h-[212.04px] md:max-w-[784px] md:w-[55%] justify-center md:pt-12 md:px-12'}`}>
         <div>
-          <h3 className="text-[30px] font-[700]">{head}</h3>
-          <p className="text-[20px] text-slate-600 mt-2">
+          <h3 className="text-[25px] md:text-[30px] font-[700]">{head}</h3>
+          <p className="text-lg sm:text-[20px] text-slate-600 mt-2">
             {text}
           </p>
         </div>

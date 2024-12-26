@@ -27,9 +27,10 @@ const Tags: React.FC<TagsProps> = ({ tags }) => {
         return (
           <span
             key={index}
-            className="py-2 px-3 border-2 mx-2"
+            className="group py-2 px-3 border-2 mx-2 flex justify-center items-center gap-1"
             style={{ backgroundColor: randomColor }}
           >
+            <span className="text-xl opacity-0 font-semibold transition-all duration-150 text-slate-600 group-hover:opacity-100">#</span>
             {tag.display_name}
           </span>
         );

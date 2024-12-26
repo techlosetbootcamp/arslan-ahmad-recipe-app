@@ -13,7 +13,7 @@ const Search = () => {
           icon="lg"
         />
       </section>
-      <SectionContainer className="lg:grid-cols-3 text-left" title="Search Post">
+      <SectionContainer className="lg:grid-cols-3 text-left" title="Search Results">
         <Card
           imageSrc="../src/assets/imgs/card-image.png"
           head="Waffels"

@@ -9,7 +9,7 @@ interface CardButtonProps {
 const CardButtton: React.FC<CardButtonProps> = ({ text, to }) => {
   return (
     <>
-      <Link to={to} className="bg-yellow-500 font-bold text-[20.71px] px-6 py-2 w-fit rounded-full mt-4">
+      <Link to={to} className="bg-yellow-500 font-bold text-lg lg:text-[20.71px] px-3 py-1  lg:px-6 lg:py-2 w-fit rounded-full lg:mt-4">
         {text}
       </Link>
     </>

@@ -1,3 +1,36 @@
+// Sidebar.tsx
+import React from "react";
+import SeachBar from "../SearchBar";
+import { NavLink } from "./NavLink";
+
+interface SidebarProps {
+  isSidebarOpen: boolean;
+  toggleSidebar: () => void;
+  navItems: { name: string; href: string }[];
+}
+
+export const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar, navItems }) => {
+
+  return (
+    <div
+      className={`fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform ${
+        isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+      } transition-transform duration-300 ease-in-out lg:hidden pt-6 px-2`}
+    >
+      <SeachBar className="py-2 px-4" />
+      <ul className="flex flex-col gap-6 p-6">
+        {navItems.map((item, index) => (
+          <li key={index} className="hover:bg-slate-100">
+            <NavLink name={item.name} href={item.href} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+
+
 interface SidebarButtonProps {
   toggleSidebar: () => void;
 }
@@ -26,5 +59,7 @@ const SidebarButton: React.FC<SidebarButtonProps> = ({ toggleSidebar }) => {
     </>
   );
 };
+
+
 
 export { SidebarButton };
