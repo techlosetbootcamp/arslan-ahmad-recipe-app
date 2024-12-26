@@ -22,7 +22,7 @@ const Card: React.FC<CardProps> = ({ type = "vertical", imageSrc, text, head, bu
       <img src={imageSrc} className={`object-cover w-full ${type === 'vertical'? 'h-[212.04px]' : 'w-[403px]'}`} alt="featured_image" />
       <div className={`flex flex-col text-start ${type === 'vertical'? 'px-4 pt-2 h-[261.64px] justify-between' : 'h-[212.04px] w-[784px] justify-center p-12'}`}>
         <div>
-          <h3 className="text-[32px] font-[700]">{head}</h3>
+          <h3 className="text-[30px] font-[700]">{head}</h3>
           <p className="text-[20px] text-slate-600 mt-2">
             {text}
           </p>
