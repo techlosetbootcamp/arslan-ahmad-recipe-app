@@ -19,7 +19,7 @@ const useRecipe = () => {
     dispatch(fetchRecipes());
     try {
       const response = await axios.get(
-        API_BASE_URL,
+        API_BASE_URL+'/recipes/list',
         {
           params: { from: "0", size: "20", tags: "under_30_minutes" },
           headers: {
