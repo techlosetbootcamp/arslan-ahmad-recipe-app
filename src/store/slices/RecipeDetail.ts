@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import recipeData from "../../../dev-test/recipe.json"; // Import the recipe data
 
-
 const initialState = {
   recipe: recipeData,  // set the default value here
   loading: false,
