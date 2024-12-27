@@ -4,9 +4,11 @@ import { RootState } from "../store";
 import { fetchRecipesData } from "../store/slices/RecipesSlice";
 import Banner from "../components/Banner";
 import RecipeCardList from "../components/RecipeCardList";
+import Loader from "../components/Loader";
+import {AppDispatch } from "../store/index";
 
 const Home: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const { recipes, loading, error } = useSelector((state: RootState) => state.recipes);
 
   const [currentPageRecent, setCurrentPageRecent] = useState<number>(1);
@@ -19,7 +21,7 @@ const Home: React.FC = () => {
     } else if (window.innerWidth >= 640) {
       setRecipesPerPage(2);
     } else {
-      setRecipesPerPage(1);
+      setRecipesPerPage(3);
     }
   };
 
@@ -27,7 +29,6 @@ const Home: React.FC = () => {
     handleResize();
     window.addEventListener("resize", handleResize);
 
-    // Fetch recipes only if not already in the state
     dispatch(fetchRecipesData());
 
     return () => {
@@ -36,14 +37,29 @@ const Home: React.FC = () => {
   }, [dispatch]);
 
   const sortedRecentRecipes = [...recipes]
-    .sort((a, b) => b.id - a.id) // Sort by descending ID as an example
-    .slice(0, recipesPerPage);
+  .sort((a, b) => {
+    const dateA = new Date(a.updated_at * 1000);
+    const dateB = new Date(b.updated_at * 1000); 
+    return dateB.getTime() - dateA.getTime(); 
+  })
+  .slice(0, recipesPerPage);
+
+  const sortedPopularRecipes = [...recipes]
+  .sort((a, b) => {
+    const scoreA = a.user_ratings?.score || 0; // Default to 0 if no score
+    const scoreB = b.user_ratings?.score || 0; // Default to 0 if no score
+    return scoreB - scoreA; // Higher scores come first
+  })
+  .slice(0, recipesPerPage);
 
   const handlePageChangeRecent = (pageNumber: number) => setCurrentPageRecent(pageNumber);
   const handlePageChangePopular = (pageNumber: number) => setCurrentPagePopular(pageNumber);
 
   return (
     <>
+      {/* Show Loader if loading */}
+      {loading && <Loader />} {/* Add this line to show loader when loading */}
+
       <Banner
         bannerImage="../src/assets/imgs/hero-banner-image.png"
         bannerText="Get Inspired, Cook with passion and enjoy unforgettable moments at the table"
@@ -61,14 +77,15 @@ const Home: React.FC = () => {
           recipesPerPage={recipesPerPage}
           handlePageChange={handlePageChangeRecent}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
-        />
+          />
 
         {/* Popular Posts */}
         <RecipeCardList
-          recipes={recipes}
+          recipes={sortedPopularRecipes}
           loading={loading}
           sectionTitle="Popular Posts"
           error={error}
+          addPages={false}
           cardType="horizontal"
           currentPage={currentPagePopular}
           recipesPerPage={recipesPerPage}

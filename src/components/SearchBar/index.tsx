@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { RootState } from "../store";
+import { RootState } from "../../store/index";
 import { useNavigate } from "react-router-dom";
 
 interface SearchBarProps {
@@ -28,7 +28,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ className, icon = "sm" }) => {
 
   return (
     <div className="w-full flex justify-center">
-      <div className={`${icon !== "sm" ? 'h-[64.17px] w-[334px] sm:w-[65%]' : 'h-[45px] '} relative bg-slate-100 rounded-full flex justify-start items-center gap-2 ${className}`}>
+      <div className={`${icon !== "sm" ? 'h-[64.17px] w-[334px] sm:w-[65%]' : 'h-[45px]'} relative bg-slate-100 rounded-full flex justify-start items-center gap-2 ${className}`}>
         <img
           className={`${icon === "sm" ? "h-[17.61px]" : "h-[25.11px]"}`}
           src="src/assets/icons/search.svg"

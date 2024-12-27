@@ -30,7 +30,7 @@ const Footer = () => {
 
       {/* Social Media Section */}
       <div className="flex flex-col items-center md:items-start gap-4">
-        <p className="font-bold text-[26px]">Redes sociais:</p>
+        <p className="font-bold text-[26px]">Redes&nbsp;sociais:</p>
         <div className="flex gap-4">
           {socialMediaLinks.map((link, index) => (
             <FooterLink

@@ -54,22 +54,19 @@ const SingleRecipe: React.FC = () => {
         ) : null}
 
         {/* Ingredients Section */}
-        {recipe.sections[0].components && (
+        {recipe?.sections && recipe.sections.length > 0 && recipe.sections[0].components && (
           <>
             <SectionHeader text="Ingredients" className="mb-4" />
             <IngredientsList ingredients={recipe.sections[0].components || []} />
           </>
         )}
 
+
         {/* Instructions Section */}
         <SectionHeader text="Steps to Follow" className="mb-4" />
-        <ol className="list-decimal pl-5">
-          {recipe.instructions?.map((step, index) => (
-            <li key={index} className="mb-2">
-              {step.display_text}
-            </li>
-          ))}
-        </ol>
+        {recipe?.instructions && recipe.instructions.length > 0 && (
+          <StepsList steps={recipe.instructions} />
+        )}
 
         {/* Nutrition Section */}
         {recipe.nutrition && (

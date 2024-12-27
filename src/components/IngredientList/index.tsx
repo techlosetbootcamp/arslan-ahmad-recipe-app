@@ -1,4 +1,4 @@
-import SingleListHeader from "./SectionHeader";
+import SingleListHeader from "../SectionHeader";
 
 interface Recipe {
   instructions: Array<{
@@ -20,7 +20,7 @@ const ContentList = ({
   ));
   return (
     <>
-      <SingleListHeader text={heading} />
+      <SingleListHeader title={heading} />
       {type === "ul" ? (
         <ul className="list-disc list-outside pl-4">{content}</ul>
       ) : (
