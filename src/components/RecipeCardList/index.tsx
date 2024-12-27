@@ -18,6 +18,7 @@ interface RecipeCardListProps {
   sectionTitle: string;
   className: string;
   currentPage: number;
+  addPages: boolean;
   recipesPerPage: number;
   handlePageChange: (pageNumber: number) => void;
 }
@@ -28,6 +29,7 @@ const RecipeCardList: React.FC<RecipeCardListProps> = ({
   error,
   sectionTitle,
   className,
+  addPages = true,
   currentPage,
   recipesPerPage,
   handlePageChange,
@@ -61,8 +63,8 @@ const RecipeCardList: React.FC<RecipeCardListProps> = ({
                 head={recipe.name}
                 type={cardType} // Pass the card type ('horizontal' or 'vertical')
                 text={
-                  recipe.description?.length > 100
-                    ? `${recipe.description.substring(0, 100)}...`
+                  recipe.description?.length > 80
+                    ? `${recipe.description.substring(0, 80)}...`
                     : recipe.description || "No description available."
                 }
                 buttonLink={`/recipes/${recipe.id}`}
@@ -71,21 +73,24 @@ const RecipeCardList: React.FC<RecipeCardListProps> = ({
           </SectionContainer>
 
           {/* Pagination Controls */}
-          <div className="flex justify-center mt-4">
-            {Array.from({ length: totalPages }, (_, index) => (
-              <button
-                key={index}
-                className={`px-3 py-1 md:px-4 md:py-2 mr-1 md:mx-1 ${
-                  currentPage === index + 1
-                    ? "bg-yellow-500 outline text-white"
-                    : "bg-yellow-200 text-black"
-                } rounded-md outline-yellow-300`}
-                onClick={() => handlePageChange(index + 1)}
-              >
-                {index + 1}
-              </button>
-            ))}
-          </div>
+          {
+            addPages && (
+              <div className="flex justify-center mt-4">
+                {Array.from({ length: totalPages }, (_, index) => (
+                  <button
+                    key={index}
+                    className={`px-3 py-1 md:px-4 md:py-2 mr-1 md:mx-1 ${
+                      currentPage === index + 1
+                        ? "bg-yellow-500 outline text-white"
+                        : "bg-yellow-200 text-black"
+                    } rounded-md outline-yellow-300`}
+                    onClick={() => handlePageChange(index + 1)}
+                  >
+                    {index + 1}
+                  </button>
+                ))}
+              </div>
+          )}
         </>
       ) : (
         <p className="text-3xl font-semibold">Sorry, No recipes found... 🤔</p>

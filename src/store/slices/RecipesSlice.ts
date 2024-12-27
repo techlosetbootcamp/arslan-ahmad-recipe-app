@@ -21,23 +21,22 @@ const initialState: RecipesState = {
   error: null,
 };
 
-// Async action using redux-thunk
-export const fetchRecipesData = () => async (dispatch: any) => {
-  dispatch(fetchRecipes()); // Dispatch loading action
+// Async action to fetch recipes
+export const fetchRecipesData = () => async (dispatch: any, getState: any) => {
+  const state = getState().recipes;
+  if (state.recipes.length > 0) return; // Skip fetching if recipes already exist
+
+  dispatch(fetchRecipes());
   try {
-    const response = await axios.get(
-      "https://tasty.p.rapidapi.com/recipes/list",
-      {
-        params: { from: "0", size: "20", tags: "under_30_minutes" },
-        headers: {
-          "X-RapidAPI-Key": import.meta.env.VITE_RAPIDAPI_KEY,
-          "X-RapidAPI-Host": "tasty.p.rapidapi.com",
-        },
-      }
-    );
-    dispatch(fetchRecipesSuccess(response.data.results)); // Dispatch success action
+    const response = await axios.get("https://tasty.p.rapidapi.com/recipes/list", {
+      headers: {
+        "X-RapidAPI-Key": import.meta.env.VITE_RAPIDAPI_KEY,
+        "X-RapidAPI-Host": "tasty.p.rapidapi.com",
+      },
+    });
+    dispatch(fetchRecipesSuccess(response.data.results));
   } catch (err: any) {
-    dispatch(fetchRecipesFailure(err.message || "Failed to fetch recipes.")); // Dispatch failure action
+    dispatch(fetchRecipesFailure(err.message || "Failed to fetch recipes."));
   }
 };
 

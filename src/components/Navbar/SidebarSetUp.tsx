@@ -10,7 +10,7 @@ interface SidebarProps {
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar, navItems }) => {
-
+  
   return (
     <div
       className={`fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform ${
@@ -18,11 +18,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar, 
       } transition-transform duration-300 ease-in-out lg:hidden pt-6 px-2`}
     >
       <SeachBar className="py-2 px-4" />
-      <ul className="flex flex-col gap-6 p-6">
+      <ul className="flex flex-col gap-6 p-2">
         {navItems.map((item, index) => (
-          <li key={index} className="hover:bg-slate-100">
-            <NavLink name={item.name} href={item.href} />
-          </li>
+            <NavLink name={item.name} key={index} onClick={toggleSidebar} className="px-4 py-2 hover:bg-slate-100" href={item.href} />
         ))}
       </ul>
     </div>
