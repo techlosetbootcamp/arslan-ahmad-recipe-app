@@ -15,12 +15,12 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="p-20 bg-yellow-500 grid lg:grid-cols-2 grid-cols-1 gap-10">
+    <footer className="p-20 bg-pri grid lg:grid-cols-2 grid-cols-1 gap-10">
       {/* Logo and Branding */}
       <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
         <img
           className="w-[49.68px] h-[46.13px]"
-          src="../src/assets/icons/logo.svg"
+          src="/assets/icons/logo.svg"
           alt="Delícias à Mesa logo"
         />
         <p className="font-bold hidden sm:block text-[5vw] lg:text-[46.13px]">

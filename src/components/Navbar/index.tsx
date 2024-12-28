@@ -16,13 +16,13 @@ const Navbar = () => {
   const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
 
   return (
-    <header className="bg-yellow-500 pt-2 sticky top-0 w-full z-20">
+    <header className="bg-pri pt-2 sticky top-0 w-full z-20">
       <nav className="p-6 bg-white flex justify-between items-center shadow-sm">
         {/* Logo Section */}
         <Link to="/" className="flex justify-start items-center gap-x-2">
           <img
             className="w-[25px] h-[26px]"
-            src="../src/assets/icons/logo.svg"
+            src="/assets/icons/logo.svg"
             alt="logo"
           />
           <span className="hidden sm:inline-block font-[500] text-[26px]">
@@ -33,7 +33,7 @@ const Navbar = () => {
         {/* Navigation Items */}
         <div className="gap-4 hidden lg:flex">
           {navItems.map((item, index) => (
-            <NavLink key={index} name={item.name} href={item.href} />
+            <NavLink key={index} itemKey={index} name={item.name} href={item.href} />
           ))}
         </div>
 

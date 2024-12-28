@@ -31,7 +31,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ className, icon = "sm" }) => {
       <div className={`${icon !== "sm" ? 'h-[64.17px] w-[334px] sm:w-[65%]' : 'h-[45px]'} relative bg-slate-100 rounded-full flex justify-start items-center gap-2 ${className}`}>
         <img
           className={`${icon === "sm" ? "h-[17.61px]" : "h-[25.11px]"}`}
-          src="src/assets/icons/search.svg"
+          src="/assets/icons/search.svg"
           alt="search_icon"
         />
         <input

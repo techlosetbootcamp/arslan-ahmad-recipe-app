@@ -6,12 +6,15 @@ export default {
   ],
   theme: {
     extend: {
-      color: {
+      colors: {
         'pri': '#ffdb63',
-        'light-yel' : '#ffe9a1',
-        'light-gry' : '#f5f2f2'
-      }
+        'low-yel': '#ffe9a1',
+        'low-gry': '#f5f2f2',
+      },
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'], // Add Inter font
+      },
     },
   },
   plugins: [],
-}
+};

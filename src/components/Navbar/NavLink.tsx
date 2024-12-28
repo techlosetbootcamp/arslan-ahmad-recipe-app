@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const NavLink = ({ name, href, className, itemKey, onClick }: { name: string; href: string, className:string, itemKey:number | string, onClick?:()=> void }) => {
+export const NavLink = ({ name, href, className, itemKey, onClick }: { name: string; href: string, className?:string, itemKey:number | string, onClick?:()=> void }) => {
     return (
       <Link
         to={href}

@@ -14,7 +14,7 @@ const Banner:React.FC<BannerProps> = ({bannerImage, bannerText}) => {
         src={bannerImage}
         alt="Banner Image"
       />
-      <div className="text-[40px] leading-[48.41px] text-slate-200 w-full h-full bg-gray-900/50 z-10 flex justify-center items-center font-bold p-10">
+      <div className="text-[40px] leading-[48.41px] text-white w-full h-full bg-gray-900/50 z-10 flex justify-center items-center font-bold p-10">
       <p className="min-w-[md] lg:w-[60%] text-center">
         {bannerText}
       </p>

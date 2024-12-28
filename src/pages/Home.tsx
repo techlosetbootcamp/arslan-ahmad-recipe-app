@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store";
-import { fetchRecipesData } from "../store/slices/RecipesSlice";
 import Banner from "../components/Banner";
 import RecipeCardList from "../components/RecipeCardList";
-import Loader from "../components/Loader";
 import {AppDispatch } from "../store/index";
 
 const Home: React.FC = () => {
@@ -28,8 +26,6 @@ const Home: React.FC = () => {
   useEffect(() => {
     handleResize();
     window.addEventListener("resize", handleResize);
-
-    dispatch(fetchRecipesData());
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -57,11 +53,8 @@ const Home: React.FC = () => {
 
   return (
     <>
-      {/* Show Loader if loading */}
-      {loading && <Loader />} {/* Add this line to show loader when loading */}
-
       <Banner
-        bannerImage="../src/assets/imgs/hero-banner-image.png"
+        bannerImage="/assets/imgs/hero-banner-image.png"
         bannerText="Get Inspired, Cook with passion and enjoy unforgettable moments at the table"
       />
 

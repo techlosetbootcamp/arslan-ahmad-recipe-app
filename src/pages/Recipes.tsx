@@ -26,7 +26,7 @@ const Search = () => {
   };
 
   useEffect(() => {
-    handleResize(); // Set initial value
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -48,7 +48,7 @@ const Search = () => {
           icon="lg"
         />
       </section>
-      {/* Recipe List */}
+      
       <RecipeCardList
         recipes={recipes}
         loading={loading}
