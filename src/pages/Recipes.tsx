@@ -1,20 +1,15 @@
-import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import SectionHeader from "../components/SectionHeader";
-import SearchBar from "../components/SearchBar";
-import RecipeCardList from "../components/RecipeCardList";
-import { RootState } from "../store";
+import SectionHeader from "../components/sectionHeader/SectionHeader";
+import SearchBar from "../components/searchBar/SearchBar";
+import RecipeCardList from "../components/recipeCardList/RecipeCardList";
+import useRecipes from "../hooks/useRecipes";
 
 const Search = () => {
   const [currentPagePopular, setCurrentPagePopular] = useState<number>(1);
   const [recipesPerPage, setRecipesPerPage] = useState<number>(3);
 
-  // Access Redux state
-  const { recipes, loading, error } = useSelector(
-    (state: RootState) => state.recipes
-  );
+  const { recipes, loading, error } = useRecipes();
 
-  // Adjust recipes per page on window resize
   const handleResize = () => {
     if (window.innerWidth >= 1024) {
       setRecipesPerPage(6);
@@ -34,13 +29,12 @@ const Search = () => {
     };
   }, []);
 
-  // Pagination handler
   const handlePageChangePopular = (pageNumber: number) => {
     setCurrentPagePopular(pageNumber);
   };
 
   return (
-    <main className="container mx-auto p-4">
+    <div className="container mx-auto p-4">
       <section className="h-[360px] w-full flex flex-col items-center justify-center">
         <SectionHeader title="Search Recipes" />
         <SearchBar
@@ -59,7 +53,7 @@ const Search = () => {
         handlePageChange={handlePageChangePopular}
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
       />
-    </main>
+    </div>
   );
 };
 

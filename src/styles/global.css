@@ -5,6 +5,6 @@
 }
 
 .scroll-smooth {
-  scrollbar-width: thin; /* For Firefox: thin scrollbar */
-  scrollbar-color: #9ca3af #f3f4f6; /* Thumb color and track color */
+  scrollbar-width: thin; 
+  scrollbar-color: #9ca3af #f3f4f6;
 }

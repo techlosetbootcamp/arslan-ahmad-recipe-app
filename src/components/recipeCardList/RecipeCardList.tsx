@@ -1,7 +1,7 @@
 // RecipeCardList.tsx
 import React from "react";
-import Card from "../Card";
-import SectionContainer from "../SectionContainer";
+import Card from "../card/Card";
+import SectionContainer from "../sectionContainer/SectionContainer";
 
 interface Recipe {
   id: number;

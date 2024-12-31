@@ -1,16 +1,13 @@
-// Sidebar.tsx
 import React from "react";
-import SeachBar from "../SearchBar";
+import SeachBar from "../searchBar/SearchBar";
 import { NavLink } from "./NavLink";
+import { SidebarButtonProps, SidebarProps } from "../../types/SideBar";
 
-interface SidebarProps {
-  isSidebarOpen: boolean;
-  toggleSidebar: () => void;
-  navItems: { name: string; href: string }[];
-}
-
-export const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar, navItems }) => {
-  
+export const Sidebar: React.FC<SidebarProps> = ({
+  isSidebarOpen,
+  toggleSidebar,
+  navItems,
+}) => {
   return (
     <div
       className={`fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform ${
@@ -20,18 +17,19 @@ export const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar, 
       <SeachBar className="py-2 px-4" />
       <div className="flex flex-col gap-6 p-2">
         {navItems.map((item, index) => (
-            <NavLink name={item.name} key={index} itemKey={index} onClick={toggleSidebar} className="px-4 py-2 hover:bg-slate-100" href={item.href} />
+          <NavLink
+            name={item.name}
+            key={index}
+            itemKey={index}
+            onClick={toggleSidebar}
+            className="px-4 py-2 hover:bg-slate-100"
+            href={item.href}
+          />
         ))}
       </div>
     </div>
   );
 };
-
-
-
-interface SidebarButtonProps {
-  toggleSidebar: () => void;
-}
 
 const SidebarButton: React.FC<SidebarButtonProps> = ({ toggleSidebar }) => {
   return (
@@ -57,7 +55,5 @@ const SidebarButton: React.FC<SidebarButtonProps> = ({ toggleSidebar }) => {
     </>
   );
 };
-
-
 
 export { SidebarButton };

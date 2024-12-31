@@ -1,10 +1,5 @@
 import React from "react";
-
-interface SectionHeaderProps {
-  text: string; // The header text
-  align?: "left" | "center" | "right"; // Text alignment, default is "left"
-  className?: string; // Additional custom classes for styling
-}
+import { SectionHeaderProps } from "../../types/ListHeader";
 
 const SectionHeader: React.FC<SectionHeaderProps> = ({ text, align = "left", className = "" }) => {
   return (

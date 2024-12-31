@@ -1,22 +1,14 @@
-// import InstagramIcon from "/icons/youtube.svg";
-// import TwitterIcon from "../src/assets/icons/logo.svg";
-import YoutubeIcon from "../IconComponents/Youtube";
-import BrowserIcon from "../IconComponents/Browser";
-import PinterestIcon from "../IconComponents/Pinterest";
-// import { ReactComponent as FacebookIcon } from "./icons/facebook.svg";
-
 import FooterLink from "./FooterLink";
 
 const Footer = () => {
   const socialMediaLinks = [
-    { name: "Instagram", href: "https://instagram.com", icon: <YoutubeIcon /> },
-    { name: "Twitter", href: "https://twitter.com", icon: <BrowserIcon /> },
-    { name: "Facebook", href: "https://facebook.com", icon: <PinterestIcon /> },
+    { name: "Instagram", href: "https://instagram.com", icon_path: "/assets/icons/youtube.svg" },
+    { name: "Twitter", href: "https://twitter.com", icon_path: "/assets/icons/browser.svg" },
+    { name: "Facebook", href: "https://facebook.com", icon_path: "/assets/icons/pinterest.svg" },
   ];
 
   return (
     <footer className="p-20 bg-pri grid lg:grid-cols-2 grid-cols-1 gap-10">
-      {/* Logo and Branding */}
       <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
         <img
           className="w-[49.68px] h-[46.13px]"
@@ -28,7 +20,6 @@ const Footer = () => {
         </p>
       </div>
 
-      {/* Social Media Section */}
       <div className="flex flex-col items-center md:items-start gap-4">
         <p className="font-bold text-[26px]">Redes&nbsp;sociais:</p>
         <div className="flex gap-4">
@@ -36,7 +27,7 @@ const Footer = () => {
             <FooterLink
               key={index}
               href={link.href}
-              icon={link.icon}
+              icon={link.icon_path}
               name={link.name}
             />
           ))}

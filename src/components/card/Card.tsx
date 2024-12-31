@@ -1,5 +1,5 @@
 import React from "react";
-import CardButtton from "../CardButton";
+import CardButtton from "./CardButton";
 
 interface CardProps {
   type?: "vertical" | "horizontal";

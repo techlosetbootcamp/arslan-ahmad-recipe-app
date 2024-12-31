@@ -1,25 +1,22 @@
 import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { RootState, AppDispatch } from "../store";
+import { AppDispatch } from "../store";
 import { fetchRecipesData } from "../store/slices/RecipesSlice";
-import Banner from "../components/Banner";
-import SectionHeader from "../components/ListComponents/ListHeader";
-import IngredientsList from "../components/ListComponents/IngredientsList";
-import StepsList from "../components/ListComponents/StepsList";
-import NutritionInfo from "../components/ListComponents/NutritionInfo";
-import Tags from "../components/ListComponents/TagsList";
+import Banner from "../components/banner/Banner";
+import SectionHeader from "../components/listComponents/ListHeader";
+import IngredientsList from "../components/listComponents/IngredientsList";
+import StepsList from "../components/listComponents/StepsList";
+import NutritionInfo from "../components/listComponents/NutritionInfo";
+import Tags from "../components/listComponents/TagsList";
+import useRecipes from "../hooks/useRecipes";
 
 const SingleRecipe: React.FC = () => {
-  const { id } = useParams<{ id: string }>(); // Get recipe ID from URL
+  const { id } = useParams<{ id: string }>(); 
   const dispatch = useDispatch<AppDispatch>();
 
-  // Get recipes data and loading states from Redux
-  const { recipes, loading, error } = useSelector(
-    (state: RootState) => state.recipes
-  );
+  const { recipes, error } = useRecipes()
 
-  // Fetch recipes if not already loaded
   useEffect(() => {
     window.scrollTo(0, 0);
     
@@ -28,15 +25,11 @@ const SingleRecipe: React.FC = () => {
     }
   }, [dispatch, recipes]);
 
-  // Find the recipe by ID
   const recipe = recipes.find((r) => r.id.toString() === id);
 
-  // Handle loading and error states
-  if (loading) return <div>Loading...</div>;
   if (error) return <div className="text-red-500 font-semibold">{error}</div>;
   if (!recipe) return <div>Recipe not found.</div>;
 
-  // Render recipe details
   return (
     <>
       <Banner bannerText={recipe.name} bannerImage={recipe.thumbnail_url} />

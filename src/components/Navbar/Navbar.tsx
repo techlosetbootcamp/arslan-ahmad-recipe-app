@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SeachBar from "../SearchBar";
+import SeachBar from "../searchBar/SearchBar";
 import { NavLink } from "./NavLink";
 import { Link } from "react-router-dom";
 import { SidebarButton, Sidebar } from "./SidebarSetUp";
@@ -18,7 +18,6 @@ const Navbar = () => {
   return (
     <header className="bg-pri pt-2 sticky top-0 w-full z-20">
       <nav className="p-6 bg-white flex justify-between items-center shadow-sm">
-        {/* Logo Section */}
         <Link to="/" className="flex justify-start items-center gap-x-2">
           <img
             className="w-[25px] h-[26px]"
@@ -30,7 +29,6 @@ const Navbar = () => {
           </span>
         </Link>
 
-        {/* Navigation Items */}
         <div className="gap-4 hidden lg:flex">
           {navItems.map((item, index) => (
             <NavLink key={index} itemKey={index} name={item.name} href={item.href} />
@@ -38,20 +36,17 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-5">
-          {/* Search Input (visible on medium screens and up) */}
           <div className="max-w-[258px] hidden md:flex gap-5">
             <SeachBar className="py-2 px-4" />
           </div>
-          {/* Burger Icon (visible on small screens) */}
           <SidebarButton toggleSidebar={toggleSidebar} />
         </div>
       </nav>
 
-      {/* Sidebar */}
       <Sidebar
         isSidebarOpen={isSidebarOpen}
         toggleSidebar={toggleSidebar}
-        navItems={navItems} // Pass navItems to Sidebar
+        navItems={navItems}
       />
     </header>
   );

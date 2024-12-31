@@ -1,22 +1,16 @@
 import React from "react";
-import SectionHeader from "../SectionHeader";
+import SectionHeader from "../sectionHeader/SectionHeader";
+import { SectionContainerProps } from "../../types/SectionContainer";
 
-interface SectionContainerProps {
-  title: string; // The main title of the section
-  subtitle?: string; // Optional subtitle
-  alignment?: "left" | "center" | "right"; // Text alignment
-  className?: string; // Additional custom styles
-  children?: React.ReactNode; // Additional content to render below the title and subtitle
-}
 
 const SectionContainer: React.FC<SectionContainerProps> = ({
   title,
   subtitle,
-  alignment = "center", // Default alignment is center
+  alignment = "center", 
   className = "",
   children,
 }) => {
-  // Base styles with default alignment
+  
   const alignmentClass = {
     left: "text-left",
     center: "text-center",
@@ -25,10 +19,8 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
 
   return (
     <section className={`mb-8 ${alignmentClass[alignment]}`}>
-      {/* Title */}
       <SectionHeader title={title} subtitle={subtitle} />
 
-      {/* Children */}
       {children && <div className={`grid ${className} gap-6 p-4 justify-items-center`}>{children}</div>}
     </section>
   );
