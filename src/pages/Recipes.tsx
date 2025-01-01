@@ -1,37 +1,20 @@
-import { useState, useEffect } from "react";
 import SectionHeader from "../components/sectionHeader/SectionHeader";
 import SearchBar from "../components/searchBar/SearchBar";
 import RecipeCardList from "../components/recipeCardList/RecipeCardList";
 import useRecipes from "../hooks/useRecipes";
+import useResponsiveRecipes from "../hooks/useResponsiveRecipes";
+import useResponsivePagination from "../hooks/useResponsivePagination";
 
 const Search = () => {
-  const [currentPagePopular, setCurrentPagePopular] = useState<number>(1);
-  const [recipesPerPage, setRecipesPerPage] = useState<number>(3);
+  const {
+    loading,
+    error,
+    currentPagePopular,
+    handlePageChangePopular,
+  } = useResponsiveRecipes();
 
-  const { recipes, loading, error } = useRecipes();
-
-  const handleResize = () => {
-    if (window.innerWidth >= 1024) {
-      setRecipesPerPage(6);
-    } else if (window.innerWidth >= 640) {
-      setRecipesPerPage(4);
-    } else {
-      setRecipesPerPage(3);
-    }
-  };
-
-  useEffect(() => {
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const handlePageChangePopular = (pageNumber: number) => {
-    setCurrentPagePopular(pageNumber);
-  };
+  const { recipes } = useRecipes();
+  const { recipesPerPage } = useResponsivePagination(3);
 
   return (
     <div className="container mx-auto p-4">
@@ -42,7 +25,7 @@ const Search = () => {
           icon="lg"
         />
       </section>
-      
+
       <RecipeCardList
         recipes={recipes}
         loading={loading}

@@ -1,11 +1,13 @@
 import React from "react";
-import { SectionHeaderProps } from "../../types/ListHeader";
+import { ListHeaderProps } from "../../types/ListHeader";
 
-const SectionHeader: React.FC<SectionHeaderProps> = ({ text, align = "left", className = "" }) => {
+const SectionHeader: React.FC<ListHeaderProps> = ({
+  text,
+  align = "left",
+  className = "",
+}) => {
   return (
-    <h2
-      className={`text-xl font-bold my-6 text-${align} ${className}`}
-    >
+    <h2 className={`text-xl font-bold my-6 text-${align} ${className}`}>
       {text}
     </h2>
   );

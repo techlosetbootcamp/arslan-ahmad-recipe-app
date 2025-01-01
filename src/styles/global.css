@@ -1,10 +1,8 @@
-
-
 .content-w {
   @apply max-w-[1,286px];
 }
 
 .scroll-smooth {
-  scrollbar-width: thin; 
+  scrollbar-width: thin;
   scrollbar-color: #9ca3af #f3f4f6;
 }

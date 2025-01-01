@@ -1,27 +1,8 @@
-// RecipeCardList.tsx
 import React from "react";
 import Card from "../card/Card";
 import SectionContainer from "../sectionContainer/SectionContainer";
+import { RecipeCardListProps } from "../../types/RecipeCardList";
 
-interface Recipe {
-  id: number;
-  name: string;
-  description: string;
-  thumbnail_url: string;
-}
-
-interface RecipeCardListProps {
-  recipes: Recipe[];
-  cardType?: 'vertical' | 'horizontal'; // Optional type for card style
-  error: string | null;
-  loading: boolean;
-  sectionTitle: string;
-  className: string;
-  currentPage: number;
-  addPages?: boolean;
-  recipesPerPage: number;
-  handlePageChange: (pageNumber: number) => void;
-}
 
 const RecipeCardList: React.FC<RecipeCardListProps> = ({
   recipes,
@@ -33,44 +14,37 @@ const RecipeCardList: React.FC<RecipeCardListProps> = ({
   currentPage,
   recipesPerPage,
   handlePageChange,
-  cardType = 'vertical',
+  cardType = "vertical",
 }) => {
-  // Pagination logic
-  const totalPages = Math.ceil(recipes.length / recipesPerPage);
-  const paginatedRecipes = recipes.slice(
+  const totalPages = Math.ceil(recipes?.length / recipesPerPage);
+  const paginatedRecipes = recipes?.slice(
     (currentPage - 1) * recipesPerPage,
     currentPage * recipesPerPage
   );
 
   return (
     <>
-      {loading? null : error ? (
+      {loading ? null : error ? (
         <p>Error: {error}</p>
-      ) : paginatedRecipes.length > 0 ? (
+      ) : paginatedRecipes?.length > 0 ? (
         <>
-          {/* Section Container for the recipes */}
-          <SectionContainer
-            title={sectionTitle}
-            className={className}
-          >
-            {/* Render the list of cards */}
-            {paginatedRecipes.map((recipe) => (
+          <SectionContainer title={sectionTitle} className={className}>
+            {paginatedRecipes?.map((recipe) => (
               <Card
-                key={recipe.id}
-                imageSrc={recipe.thumbnail_url}
-                head={recipe.name}
-                type={cardType} // Pass the card type ('horizontal' or 'vertical')
+                key={recipe?.id}
+                imageSrc={recipe?.thumbnail_url}
+                head={recipe?.name}
+                type={cardType}
                 text={
-                  recipe.description?.length > 80
-                    ? `${recipe.description.substring(0, 80)}...`
-                    : recipe.description || "No description available."
+                  recipe?.description?.length > 80
+                    ? `${recipe?.description.substring(0, 80)}...`
+                    : recipe?.description || "No description available."
                 }
-                buttonLink={`/recipes/${recipe.id}`}
+                buttonLink={`/recipes/${recipe?.id}`}
               />
             ))}
           </SectionContainer>
 
-          {/* Pagination Controls */}
           {addPages && (
             <div className="flex justify-center mx-auto mt-4 text-center md:max-w-[80%] w-full scroll-smooth overflow-x-auto">
               {Array.from({ length: totalPages }, (_, index) => (

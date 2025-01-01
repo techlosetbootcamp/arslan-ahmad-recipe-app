@@ -7,14 +7,14 @@ const useRecipes = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   const { recipes, loading, error } = useSelector(
-    (state: RootState) => state.recipes
+    (state: RootState) => state?.recipes
   );
 
   useEffect(() => {
-    if (recipes.length === 0) {
+    if (recipes?.length === 0) {
       dispatch(fetchRecipesData());
     }
-  }, [dispatch, recipes.length]);
+  }, [dispatch, recipes?.length]);
 
   return { recipes, loading, error };
 };

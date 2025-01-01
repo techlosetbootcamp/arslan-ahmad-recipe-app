@@ -2,9 +2,21 @@ import FooterLink from "./FooterLink";
 
 const Footer = () => {
   const socialMediaLinks = [
-    { name: "Instagram", href: "https://instagram.com", icon_path: "/assets/icons/youtube.svg" },
-    { name: "Twitter", href: "https://twitter.com", icon_path: "/assets/icons/browser.svg" },
-    { name: "Facebook", href: "https://facebook.com", icon_path: "/assets/icons/pinterest.svg" },
+    {
+      name: "Youtube",
+      href: "https://youtube.com",
+      icon_path: "/assets/icons/youtube.svg",
+    },
+    {
+      name: "Browser",
+      href: "https://browser.com",
+      icon_path: "/assets/icons/browser.svg",
+    },
+    {
+      name: "Pinterest",
+      href: "https://pinterest.com",
+      icon_path: "/assets/icons/pinterest.svg",
+    },
   ];
 
   return (

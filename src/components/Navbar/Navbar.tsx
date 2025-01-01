@@ -31,7 +31,12 @@ const Navbar = () => {
 
         <div className="gap-4 hidden lg:flex">
           {navItems.map((item, index) => (
-            <NavLink key={index} itemKey={index} name={item.name} href={item.href} />
+            <NavLink
+              key={index}
+              itemKey={index}
+              name={item?.name}
+              href={item?.href}
+            />
           ))}
         </div>
 

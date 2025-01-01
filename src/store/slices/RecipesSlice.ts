@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AppDispatch } from "../index.ts";
+import { AppDispatch, RootState } from "../index.ts";
 import axios, { AxiosError } from "axios";
 import { Recipe, RecipesState } from "../../types/Recipe.ts";
 
@@ -10,26 +10,26 @@ const initialState: RecipesState = {
 };
 
 export const fetchRecipesData =
-  () => async (dispatch: AppDispatch, getState: any) => {
+  () => async (dispatch: AppDispatch, getState: () => RootState) => {
     const state = getState().recipes;
-    if (state.recipes.length > 0) return;
+    if (state?.recipes?.length > 0) return;
 
     dispatch(fetchRecipes());
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_URL_BASE}/recipes/list`,
+        `${import.meta.env?.VITE_URL_BASE}/recipes/list`,
         {
           headers: {
-            "X-RapidAPI-Key": import.meta.env.VITE_RAPIDAPI_KEY,
-            "X-RapidAPI-Host": import.meta.env.VITE_RAPIDAPI_HOST,
+            "X-RapidAPI-Key": import.meta.env?.VITE_RAPIDAPI_KEY,
+            "X-RapidAPI-Host": import.meta.env?.VITE_RAPIDAPI_HOST,
           },
         }
       );
-      dispatch(fetchRecipesSuccess(response.data.results));
+      dispatch(fetchRecipesSuccess(response.data?.results));
     } catch (error) {
       if (error instanceof AxiosError) {
         dispatch(
-          fetchRecipesFailure(error.message || "Failed to fetch recipes.")
+          fetchRecipesFailure(error?.message || "Failed to fetch recipes.")
         );
       }
     }

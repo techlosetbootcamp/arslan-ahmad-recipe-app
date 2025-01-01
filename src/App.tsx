@@ -11,7 +11,7 @@ import Loader from "./components/loader/Loader";
 import useRecipes from "./hooks/useRecipes";
 
 const AppRouter: React.FC = () => {
-  const { loading } = useRecipes()
+  const { loading } = useRecipes();
   return (
     <>
       {loading && <Loader />}
