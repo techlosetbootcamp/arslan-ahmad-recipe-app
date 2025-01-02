@@ -1,8 +1,6 @@
 import React from "react";
 import { IngredientsListProps } from "../../types/IngredientsList";
 
-
-
 const IngredientsList: React.FC<IngredientsListProps> = ({ ingredients }) => {
   return (
     <ul className="list-disc list-outside pl-5 mb-4 columns-1 md:columns-2">

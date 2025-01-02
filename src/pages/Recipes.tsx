@@ -6,12 +6,8 @@ import useResponsiveRecipes from "../hooks/useResponsiveRecipes";
 import useResponsivePagination from "../hooks/useResponsivePagination";
 
 const Search = () => {
-  const {
-    loading,
-    error,
-    currentPagePopular,
-    handlePageChangePopular,
-  } = useResponsiveRecipes();
+  const { loading, error, currentPagePopular, handlePageChangePopular } =
+    useResponsiveRecipes();
 
   const { recipes } = useRecipes();
   const { recipesPerPage } = useResponsivePagination(3);
@@ -34,7 +30,7 @@ const Search = () => {
         currentPage={currentPagePopular}
         recipesPerPage={recipesPerPage}
         handlePageChange={handlePageChangePopular}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+        className="grid grid-cols-1 lg:grid-cols-[repeat(2,380px)] xl:grid-cols-[repeat(3,380px)] justify-items-center justify-center gap-6 lg:gap-4"
       />
     </div>
   );

@@ -1,7 +1,6 @@
 import React from "react";
 import { TagsProps } from "../../types/TagsList";
 
-
 const Tags: React.FC<TagsProps> = ({ tags }) => {
   const colorPalette = [
     "#F6E05E",

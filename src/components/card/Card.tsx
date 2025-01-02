@@ -2,8 +2,6 @@ import React from "react";
 import CardButtton from "./CardButton";
 import { CardProps } from "../../types/Card";
 
-
-
 const Card: React.FC<CardProps> = ({
   type = "vertical",
   imageSrc,

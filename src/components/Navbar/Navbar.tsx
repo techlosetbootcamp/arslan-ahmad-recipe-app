@@ -1,22 +1,20 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
+import useSideBarHandler from "../../hooks/useSideBar";
+import { SidebarButton, Sidebar } from "./SidebarSetUp";
 import SeachBar from "../searchBar/SearchBar";
 import { NavLink } from "./NavLink";
-import { Link } from "react-router-dom";
-import { SidebarButton, Sidebar } from "./SidebarSetUp";
 
 const Navbar = () => {
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
-
+  const { isSidebarOpen, setSidebarOpen } = useSideBarHandler();
+  const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Receitas", href: "/recipes" },
     { name: "Sobre nós", href: "/sobre-nos" },
   ];
 
-  const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
-
   return (
-    <header className="bg-pri pt-2 sticky top-0 w-full z-20">
+    <header className="bg-pri pt-[29px] sticky top-0 w-full z-20">
       <nav className="p-6 bg-white flex justify-between items-center shadow-sm">
         <Link to="/" className="flex justify-start items-center gap-x-2">
           <img

@@ -19,34 +19,36 @@ const Home: React.FC = () => {
   return (
     <>
       <Banner
-        bannerImage="/assets/imgs/hero-banner-image.png"
+        bannerImage="/assets/imgs/banner-image.png"
         bannerText="Get Inspired, Cook with passion and enjoy unforgettable moments at the table"
+        className="h-[650px] sm:h-[362px]"
+        imageAlt="Banner Image"
       />
 
       <section className="p-4">
-        <RecipeCardList
-          recipes={sortedRecentRecipes}
-          loading={loading}
-          sectionTitle="Recent Recipes"
-          error={error}
-          addPages={false}
-          currentPage={currentPageRecent}
-          recipesPerPage={recipesPerPage}
-          handlePageChange={handlePageChangeRecent}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
-        />
-
         <RecipeCardList
           recipes={sortedPopularRecipes}
           loading={loading}
           sectionTitle="Popular Posts"
           error={error}
           addPages={false}
-          cardType="horizontal"
           currentPage={currentPagePopular}
           recipesPerPage={recipesPerPage}
           handlePageChange={handlePageChangePopular}
-          className="grid-cols-1 px-0 md:px-6"
+          className="flex justify-center flex-wrap gap-6"
+        />
+
+        <RecipeCardList
+          recipes={sortedRecentRecipes}
+          loading={loading}
+          sectionTitle="Recent Recipes"
+          error={error}
+          addPages={false}
+          cardType="horizontal"
+          currentPage={currentPageRecent}
+          recipesPerPage={recipesPerPage}
+          handlePageChange={handlePageChangeRecent}
+          className="grid grid-cols-1 gap-6 px-0 md:px-6 justify-items-center"
         />
       </section>
     </>

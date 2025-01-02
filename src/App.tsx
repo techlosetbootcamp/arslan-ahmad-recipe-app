@@ -16,7 +16,7 @@ const AppRouter: React.FC = () => {
     <>
       {loading && <Loader />}
       <Router>
-        <div className="flex flex-col h-screen">
+        <div className="flex flex-col min-h-screen">
           <Navbar />
           <main className="flex-[1_0_auto]">
             <Routes>

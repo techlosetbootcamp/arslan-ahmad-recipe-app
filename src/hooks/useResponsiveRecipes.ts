@@ -32,7 +32,7 @@ const useResponsiveRecipes = () => {
       const dateB = new Date(b?.updated_at * 1000);
       return dateB.getTime() - dateA.getTime();
     })
-    ?.slice(0, recipesPerPage);
+    ?.slice(2, recipesPerPage + 2);
 
   const sortedPopularRecipes = [...recipes]
     ?.sort((a, b) => {
@@ -40,7 +40,7 @@ const useResponsiveRecipes = () => {
       const scoreB = b?.user_ratings?.score || 0;
       return scoreB - scoreA;
     })
-    ?.slice(0, recipesPerPage);
+    ?.slice(2, recipesPerPage + 2);
 
   const handlePageChangeRecent = (pageNumber: number) =>
     setCurrentPageRecent(pageNumber);

@@ -2,7 +2,7 @@ import { Recipe } from "./Recipe";
 
 export interface RecipeCardListProps {
   recipes: Recipe[];
-  cardType?: "vertical" | "horizontal"; 
+  cardType?: "vertical" | "horizontal";
   error: string | null;
   loading: boolean;
   sectionTitle: string;

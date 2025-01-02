@@ -16,11 +16,11 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
   };
 
   return (
-    <section className={`mb-8 ${alignmentClass[alignment]}`}>
+    <section className={`mb-4 ${alignmentClass[alignment]}`}>
       <SectionHeader title={title} subtitle={subtitle} />
 
       {children && (
-        <div className={`grid ${className} gap-6 p-4 justify-items-center`}>
+        <div className={className}>
           {children}
         </div>
       )}

@@ -11,11 +11,11 @@ const SingleRecipe: React.FC = () => {
   const { recipe, error } = useSingleRecipe();
 
   if (error) return <div className="text-red-500 font-semibold">{error}</div>;
-  if (!recipe) return <div>Recipe not found.</div>;
+  if (!recipe) return <div>Recipe not found.<br /> <p>{error}</p></div>;
 
   return (
     <>
-      <Banner bannerText={recipe?.name} bannerImage={recipe?.thumbnail_url} />
+      <Banner bannerText={recipe?.name} className="h-[362px]" bannerImage={recipe?.thumbnail_url} />
 
       <section className="container mx-auto p-12">
         {recipe?.total_time_minutes ? (

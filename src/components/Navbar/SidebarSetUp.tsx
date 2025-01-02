@@ -1,12 +1,12 @@
 import React from "react";
 import SeachBar from "../searchBar/SearchBar";
-import { NavLink } from "./NavLink";
 import { SidebarButtonProps, SidebarProps } from "../../types/SideBar";
+import { NavLink } from "./NavLink";
 
 export const Sidebar: React.FC<SidebarProps> = ({
-  isSidebarOpen,
-  toggleSidebar,
   navItems,
+  toggleSidebar,
+  isSidebarOpen,
 }) => {
   return (
     <div

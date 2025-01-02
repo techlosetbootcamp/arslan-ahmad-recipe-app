@@ -3,7 +3,6 @@ import Card from "../card/Card";
 import SectionContainer from "../sectionContainer/SectionContainer";
 import { RecipeCardListProps } from "../../types/RecipeCardList";
 
-
 const RecipeCardList: React.FC<RecipeCardListProps> = ({
   recipes,
   error,

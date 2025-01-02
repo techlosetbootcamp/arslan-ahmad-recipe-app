@@ -12,7 +12,10 @@ export default {
         'low-gry': '#f5f2f2',
       },
       fontFamily: {
-        inter: ['Inter', 'sans-serif'], // Add Inter font
+        inter: ['Inter', 'sans-serif'],
+      },
+      fontSize: {
+        '2xs': '416px',
       },
     },
   },

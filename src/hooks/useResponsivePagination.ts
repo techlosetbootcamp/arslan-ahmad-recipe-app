@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 
 const useResponsivePagination = (defaultRecipesPerPage: number) => {
-  const [recipesPerPage, setRecipesPerPage] = useState<number>(defaultRecipesPerPage);
+  const [recipesPerPage, setRecipesPerPage] = useState<number>(
+    defaultRecipesPerPage
+  );
   const [currentPage, setCurrentPage] = useState<number>(1);
 
   const handleResize = () => {
