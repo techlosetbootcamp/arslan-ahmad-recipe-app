@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Recipes from "./pages/Recipes";
 import NotFound from "./pages/NotFound";
-import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import SingleRecipe from "./pages/SingleRecipe";
 import Loader from "./components/loader/Loader";
 import useRecipes from "./hooks/useRecipes";
+import Navbar from "./components/navbar/Navbar";
 
 const AppRouter: React.FC = () => {
   const { loading } = useRecipes();
