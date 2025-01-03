@@ -14,6 +14,8 @@ The Recipe App is a platform that allows users to discover and share recipes. It
 
 This project is part of the **TechloSet Bootcamps** under the Coding Bootcamp 7.0 list.
 
+**Live Demo at:** https://arslan-recipe-app.netlify.app/
+
 ## Tech Stack
 
 [![My Skills](https://skillicons.dev/icons?i=vite,react,tailwind,redux,)](https://skillicons.dev)
