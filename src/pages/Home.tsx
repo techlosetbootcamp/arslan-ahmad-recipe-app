@@ -29,7 +29,7 @@ const Home: React.FC = () => {
         <RecipeCardList
           recipes={sortedPopularRecipes}
           loading={loading}
-          sectionTitle="Popular Posts"
+          sectionTitle="Popular Recipes"
           error={error}
           addPages={false}
           currentPage={currentPagePopular}
