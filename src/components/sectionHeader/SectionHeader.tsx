@@ -1,13 +1,16 @@
 import { SectionHeaderProps } from "../../types/SectionHeader";
 
-const SectionHeader: React.FC<SectionHeaderProps> = ({ title, subtitle }) => {
+const SectionHeader: React.FC<SectionHeaderProps> = ({ title, alignment }) => {
   return (
     <>
-      <h2 className="text-[32px] md:text-[38.9px] leading-[47.07px] my-10 font-[700] text-gray-800">
+      <h2
+        className={`text-[32px] ${
+          alignment == "left" &&
+          "text-center min-[1024px]:text-left min-[1024px]:ml-28 min-[1281px]:ml-10"
+        } md:text-[38.9px] leading-[47.07px] my-10 font-[700] text-gray-800`}
+      >
         {title}
       </h2>
-
-      {subtitle && <p className="text-lg text-gray-600 mt-2">{subtitle}</p>}
     </>
   );
 };

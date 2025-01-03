@@ -17,13 +17,9 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
 
   return (
     <section className={`mb-4 ${alignmentClass[alignment]}`}>
-      <SectionHeader title={title} subtitle={subtitle} />
+      <SectionHeader alignment={alignment} title={title} subtitle={subtitle} />
 
-      {children && (
-        <div className={className}>
-          {children}
-        </div>
-      )}
+      {children && <div className={className}>{children}</div>}
     </section>
   );
 };

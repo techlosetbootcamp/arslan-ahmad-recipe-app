@@ -32,7 +32,7 @@ const useResponsiveRecipes = () => {
       const dateB = new Date(b?.updated_at * 1000);
       return dateB.getTime() - dateA.getTime();
     })
-    ?.slice(2, recipesPerPage + 2);
+    ?.slice(1, recipesPerPage + 1);
 
   const sortedPopularRecipes = [...recipes]
     ?.sort((a, b) => {

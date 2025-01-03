@@ -8,6 +8,7 @@ const RecipeCardList: React.FC<RecipeCardListProps> = ({
   error,
   loading,
   sectionTitle,
+  headAlign = "center",
   className,
   addPages = true,
   currentPage,
@@ -27,7 +28,11 @@ const RecipeCardList: React.FC<RecipeCardListProps> = ({
         <p>Error: {error}</p>
       ) : paginatedRecipes?.length > 0 ? (
         <>
-          <SectionContainer title={sectionTitle} className={className}>
+          <SectionContainer
+            alignment={headAlign}
+            title={sectionTitle}
+            className={className}
+          >
             {paginatedRecipes?.map((recipe) => (
               <Card
                 key={recipe?.id}

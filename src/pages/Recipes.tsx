@@ -25,7 +25,8 @@ const Search = () => {
       <RecipeCardList
         recipes={recipes}
         loading={loading}
-        sectionTitle="List of Recipes"
+        sectionTitle="Search Results"
+        headAlign="left"
         error={error}
         currentPage={currentPagePopular}
         recipesPerPage={recipesPerPage}

@@ -5,6 +5,7 @@ export interface RecipeCardListProps {
   cardType?: "vertical" | "horizontal";
   error: string | null;
   loading: boolean;
+  headAlign?: "center" | "left";
   sectionTitle: string;
   className: string;
   currentPage: number;
