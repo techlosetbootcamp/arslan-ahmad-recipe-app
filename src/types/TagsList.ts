@@ -1,7 +1,7 @@
-interface Tag {
+type Tag = {
   display_name: string;
-}
+};
 
-export interface TagsProps {
+export type TagsProps = {
   tags: Tag[];
-}
+};

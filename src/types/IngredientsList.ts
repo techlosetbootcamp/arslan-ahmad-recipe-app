@@ -1,9 +1,9 @@
-export interface IngredientsListProps {
+export type IngredientsListProps = {
   ingredients: Ingredient[];
-}
+};
 
-interface Ingredient {
+type Ingredient = {
   ingredient: {
     name: string;
   };
-}
+};

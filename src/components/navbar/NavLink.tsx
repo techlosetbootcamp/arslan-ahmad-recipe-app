@@ -11,6 +11,7 @@ export const NavLink: React.FC<NavLinkProps> = ({
 }) => {
   return (
     <Link
+      key={itemKey}
       to={href}
       className={`font-bold text-xl text-gray-700 ${className}`}
       onClick={onClick}

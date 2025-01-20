@@ -1,3 +1,3 @@
-export interface StepsListProps {
+export type StepsListProps = {
   steps: { display_text: string }[];
-}
+};

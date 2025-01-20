@@ -1,4 +1,4 @@
-export interface Recipe {
+export type Recipe = {
   id: number;
   name: string;
   description: string;
@@ -23,20 +23,20 @@ export interface Recipe {
     count_positive: number;
     score: number;
   };
-}
+};
 
-interface Component {
+type Component = {
   ingredient: Ingredient;
-}
+};
 
-interface Ingredient {
+type Ingredient = {
   id: number;
   name: string;
   created_at: number;
-}
+};
 
-export interface RecipesState {
+export type RecipesState = {
   recipes: Recipe[];
   loading: boolean;
   error: string | null;
-}
+};

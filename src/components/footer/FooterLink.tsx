@@ -14,7 +14,7 @@ const FooterLink = ({
       to={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="p-2 bg-low-yel rounded-md hover:bg-low-yel/60 transition-colors"
+      className="p-2 bg-lignt_yellow rounded-md hover:bg-lignt_yellow/60 transition-colors"
       title={name}
     >
       <img src={icon} alt={name} />

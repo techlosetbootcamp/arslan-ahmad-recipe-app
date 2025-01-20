@@ -2,6 +2,12 @@ import React from "react";
 import Banner from "../components/banner/Banner";
 import RecipeCardList from "../components/recipeCardList/RecipeCardList";
 import useResponsiveRecipes from "../hooks/useResponsiveRecipes";
+import { bannerImage } from "../constants/images";
+import {
+  bannerText,
+  popularHeaderText,
+  recentHeaderText,
+} from "../constants/text";
 
 const Home: React.FC = () => {
   const {
@@ -19,8 +25,8 @@ const Home: React.FC = () => {
   return (
     <>
       <Banner
-        bannerImage="/assets/imgs/banner-image.png"
-        bannerText="Get Inspired, Cook with passion and enjoy unforgettable moments at the table"
+        bannerImage={bannerImage}
+        bannerText={bannerText}
         className="h-[650px] sm:h-[362px]"
         imageAlt="Banner Image"
       />
@@ -29,7 +35,7 @@ const Home: React.FC = () => {
         <RecipeCardList
           recipes={sortedPopularRecipes}
           loading={loading}
-          sectionTitle="Popular Recipes"
+          sectionTitle={popularHeaderText}
           error={error}
           addPages={false}
           currentPage={currentPagePopular}
@@ -41,7 +47,7 @@ const Home: React.FC = () => {
         <RecipeCardList
           recipes={sortedRecentRecipes}
           loading={loading}
-          sectionTitle="Recent Recipes"
+          sectionTitle={recentHeaderText}
           error={error}
           addPages={false}
           cardType="horizontal"

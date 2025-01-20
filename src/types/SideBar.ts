@@ -1,9 +1,9 @@
-export interface SidebarButtonProps {
+export type SidebarButtonProps = {
   toggleSidebar: () => void;
-}
+};
 
-export interface SidebarProps {
+export type SidebarProps = {
   isSidebarOpen: boolean;
   toggleSidebar: () => void;
   navItems: { name: string; href: string }[];
-}
+};

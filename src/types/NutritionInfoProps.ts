@@ -1,3 +1,3 @@
-export interface NutritionInfoProps {
+export type NutritionInfoProps = {
   nutrition: { [key: string]: string | number };
-}
+};

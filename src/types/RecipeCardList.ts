@@ -1,6 +1,6 @@
 import { Recipe } from "./Recipe";
 
-export interface RecipeCardListProps {
+export type RecipeCardListProps = {
   recipes: Recipe[];
   cardType?: "vertical" | "horizontal";
   error: string | null;
@@ -12,4 +12,4 @@ export interface RecipeCardListProps {
   addPages?: boolean;
   recipesPerPage: number;
   handlePageChange: (pageNumber: number) => void;
-}
+};

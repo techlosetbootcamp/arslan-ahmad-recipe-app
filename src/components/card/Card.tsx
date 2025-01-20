@@ -16,7 +16,7 @@ const Card: React.FC<CardProps> = ({
         type === "vertical"
           ? "md:max-w-[403px] md:flex-col"
           : "md:max-w-[1187px] w-full md:flex-row md:h-[322px]"
-      } flex rounded-[33px] h-[500.68px] overflow-hidden shadow-sm flex-col max-w-[380px] bg-low-gry`}
+      } flex rounded-[33px] h-[500.68px] overflow-hidden shadow-sm flex-col max-w-[380px] bg-light_gray`}
     >
       <img
         src={imageSrc}

@@ -4,6 +4,7 @@ import RecipeCardList from "../components/recipeCardList/RecipeCardList";
 import useRecipes from "../hooks/useRecipes";
 import useResponsiveRecipes from "../hooks/useResponsiveRecipes";
 import useResponsivePagination from "../hooks/useResponsivePagination";
+import { searchInputText, searchResultsText } from "../constants/text";
 
 const Search = () => {
   const { loading, error, currentPagePopular, handlePageChangePopular } =
@@ -15,7 +16,7 @@ const Search = () => {
   return (
     <div className="container mx-auto p-4">
       <section className="h-[360px] w-full flex flex-col items-center justify-center">
-        <SectionHeader title="Search Recipes" />
+        <SectionHeader title={searchInputText} />
         <SearchBar
           className="max-w-[758px] w-[80%] min-w-[300px] h-[58px] sm:h-[64px] py-1 sm:py-2 px-6"
           icon="lg"
@@ -25,7 +26,7 @@ const Search = () => {
       <RecipeCardList
         recipes={recipes}
         loading={loading}
-        sectionTitle="Search Results"
+        sectionTitle={searchResultsText}
         headAlign="left"
         error={error}
         currentPage={currentPagePopular}

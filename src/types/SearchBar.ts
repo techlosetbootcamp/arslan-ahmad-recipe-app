@@ -1,4 +1,4 @@
-export interface SearchBarProps {
+export type SearchBarProps = {
   icon?: "sm" | "lg";
   className?: string;
-}
+};
