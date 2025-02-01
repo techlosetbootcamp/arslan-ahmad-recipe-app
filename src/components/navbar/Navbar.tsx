@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import useSideBarHandler from "../../hooks/useSideBar";
-import { SidebarButton, Sidebar } from "./SidebarSetUp";
+import { SidebarButton, SidebarSetUp } from "./SidebarSetUp";
 import SeachBar from "../searchBar/SearchBar";
 import { NavLink } from "./NavLink";
 import { NAV_ITEMS } from "../../constants/text";
@@ -39,7 +39,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <Sidebar
+      <SidebarSetUp
         isSidebarOpen={isSidebarOpen}
         toggleSidebar={toggleSidebar}
         navItems={NAV_ITEMS}

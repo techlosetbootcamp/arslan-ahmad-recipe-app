@@ -2,7 +2,7 @@ import React from "react";
 import { TagsProps } from "../../types/TagsList";
 import { THEME_COLOR_PALETTE } from "../../constants/text";
 
-const Tags: React.FC<TagsProps> = ({ tags }) => {
+const TagsList: React.FC<TagsProps> = ({ tags }) => {
   return (
     <div className="flex flex-wrap gap-2">
       {tags?.map((tag, index) => {
@@ -28,4 +28,4 @@ const Tags: React.FC<TagsProps> = ({ tags }) => {
   );
 };
 
-export default Tags;
+export default TagsList;

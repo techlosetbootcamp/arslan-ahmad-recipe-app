@@ -1,7 +1,7 @@
 import React from "react";
 import { ListHeaderProps } from "../../types/ListHeader";
 
-const SectionHeader: React.FC<ListHeaderProps> = ({
+const ListHeader: React.FC<ListHeaderProps> = ({
   text,
   align = "left",
   className = "",
@@ -13,4 +13,4 @@ const SectionHeader: React.FC<ListHeaderProps> = ({
   );
 };
 
-export default SectionHeader;
+export default ListHeader;

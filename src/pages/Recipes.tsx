@@ -7,7 +7,7 @@ import useResponsivePagination from "../hooks/useResponsivePagination";
 import { SEARCH_INPUT_TEXT, SEARCH_RESULTS_TEXT } from "../constants/text";
 import { useAppSelector } from "../hooks/useStore";
 
-const Search = () => {
+const Recipes = () => {
   const { error, currentPagePopular, handlePageChangePopular } =
     useResponsiveRecipes();
   const { loading } = useAppSelector((state) => state.recipes);
@@ -39,4 +39,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default Recipes;

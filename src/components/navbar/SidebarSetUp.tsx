@@ -4,7 +4,7 @@ import { SidebarButtonProps, SidebarProps } from "../../types/SideBar";
 import { NavLink } from "./NavLink";
 import SIDEBAR_ICON from "/assets/icons/sidebarIcon.svg";
 
-export const Sidebar: React.FC<SidebarProps> = ({
+export const SidebarSetUp: React.FC<SidebarProps> = ({
   navItems,
   toggleSidebar,
   isSidebarOpen,
