@@ -1,14 +1,14 @@
 import React from "react";
 import { TagsProps } from "../../types/TagsList";
-import { themeColorPalette } from "../../constants/text";
+import { THEME_COLOR_PALETTE } from "../../constants/text";
 
 const Tags: React.FC<TagsProps> = ({ tags }) => {
   return (
     <div className="flex flex-wrap gap-2">
       {tags?.map((tag, index) => {
         const randomColor =
-          themeColorPalette[
-            Math.floor(Math.random() * themeColorPalette.length)
+          THEME_COLOR_PALETTE[
+            Math.floor(Math.random() * THEME_COLOR_PALETTE.length)
           ];
 
         return (

@@ -1,8 +1,5 @@
-import {
-  footerText,
-  socialMediaLinks,
-  websiteTitle,
-} from "../../constants/text";
+import { FOOTER_TEXT, SOCIAL_MEDIA_LINKS } from "../../constants/text";
+import WEBSITE_LOGO from "/assets/icons/logo.svg";
 import FooterLink from "./FooterLink";
 
 const Footer = () => {
@@ -11,22 +8,21 @@ const Footer = () => {
       <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
         <img
           className="w-[49.68px] h-[46.13px]"
-          src="/assets/icons/logo.svg"
+          src={WEBSITE_LOGO}
           alt="Delícias à Mesa logo"
         />
-        <p
-          className="font-bold hidden sm:block text-[5vw] lg:text-[46.13px]"
-          dangerouslySetInnerHTML={{ __html: websiteTitle }}
-        ></p>
+        <p className="font-bold text-nowrap hidden sm:block text-[5vw] lg:text-[46.13px]">
+          Delícias à Mesa
+        </p>
       </div>
 
       <div className="flex flex-col items-center md:items-start gap-4">
         <p
           className="font-bold text-[26px]"
-          dangerouslySetInnerHTML={{ __html: footerText }}
+          dangerouslySetInnerHTML={{ __html: FOOTER_TEXT }}
         ></p>
         <div className="flex gap-4">
-          {socialMediaLinks.map((link, index) => (
+          {SOCIAL_MEDIA_LINKS.map((link, index) => (
             <FooterLink
               key={index}
               href={link.href}

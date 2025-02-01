@@ -2,7 +2,7 @@ import React from "react";
 import Card from "../card/Card";
 import SectionContainer from "../sectionContainer/SectionContainer";
 import { RecipeCardListProps } from "../../types/RecipeCardList";
-import { failedLoadText } from "../../constants/text";
+import { FAILED_LOAD_TEXT } from "../../constants/text";
 
 const RecipeCardList: React.FC<RecipeCardListProps> = ({
   recipes,
@@ -69,7 +69,7 @@ const RecipeCardList: React.FC<RecipeCardListProps> = ({
           )}
         </>
       ) : (
-        <p className="text-3xl font-semibold">{failedLoadText}</p>
+        <p className="text-3xl font-semibold">{FAILED_LOAD_TEXT}</p>
       )}
     </>
   );

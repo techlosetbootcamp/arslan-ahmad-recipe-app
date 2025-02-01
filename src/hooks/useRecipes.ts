@@ -1,14 +1,11 @@
 import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { RootState, AppDispatch } from "../store";
 import { fetchRecipesData } from "../store/slices/RecipesSlice";
+import { useAppDispatch, useAppSelector } from "./useStore";
 
 const useRecipes = () => {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
 
-  const { recipes, loading, error } = useSelector(
-    (state: RootState) => state?.recipes
-  );
+  const { recipes, loading, error } = useAppSelector((state) => state?.recipes);
 
   useEffect(() => {
     if (recipes?.length === 0) {

@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "../store";
 import { useNavigate } from "react-router-dom";
+import { useAppSelector } from "./useStore";
 
 const useSearch = () => {
   const [query, setQuery] = useState("");
-  const { recipes } = useSelector((state: RootState) => state.recipes);
+  const { recipes } = useAppSelector((state) => state.recipes);
   const navigate = useNavigate();
 
   const filteredSuggestions = recipes?.filter((recipe) =>

@@ -7,11 +7,11 @@ import NotFound from "./pages/NotFound";
 import Footer from "./components/footer/Footer";
 import SingleRecipe from "./pages/SingleRecipe";
 import Loader from "./components/loader/Loader";
-import useRecipes from "./hooks/useRecipes";
 import Navbar from "./components/navbar/Navbar";
+import { useAppSelector } from "./hooks/useStore";
 
 const AppRouter: React.FC = () => {
-  const { loading } = useRecipes();
+  const { loading } = useAppSelector((state) => state.recipes);
   return (
     <>
       {loading && <Loader />}

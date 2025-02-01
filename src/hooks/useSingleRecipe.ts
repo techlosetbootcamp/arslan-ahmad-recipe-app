@@ -1,13 +1,12 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { AppDispatch } from "../store";
 import { fetchRecipesData } from "../store/slices/RecipesSlice";
 import useRecipes from "../hooks/useRecipes";
+import { useAppDispatch } from "./useStore";
 
 const useSingleRecipe = () => {
   const { id } = useParams<{ id: string }>();
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
   const { recipes, error } = useRecipes();
 
   useEffect(() => {

@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import useRecipes from "../hooks/useRecipes";
+import { useAppSelector } from "./useStore";
 
 const useResponsiveRecipes = () => {
-  const { recipes, loading, error } = useRecipes();
+  const { recipes } = useRecipes();
   const [currentPageRecent, setCurrentPageRecent] = useState<number>(1);
   const [currentPagePopular, setCurrentPagePopular] = useState<number>(1);
   const [recipesPerPage, setRecipesPerPage] = useState<number>(3);
+  const { loading, error } = useAppSelector((state) => state.recipes);
 
   const handleResize = () => {
     if (window.innerWidth >= 1024) {

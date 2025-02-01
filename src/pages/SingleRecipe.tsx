@@ -6,7 +6,7 @@ import StepsList from "../components/listComponents/StepsList";
 import NutritionInfo from "../components/listComponents/NutritionInfo";
 import Tags from "../components/listComponents/TagsList";
 import useSingleRecipe from "../hooks/useSingleRecipe";
-import { singleRecipeNotFoundText } from "../constants/text";
+import { SINGLE_RECIPE_NOT_FOUND_TEXT } from "../constants/text";
 
 const SingleRecipe: React.FC = () => {
   const { recipe, error } = useSingleRecipe();
@@ -15,7 +15,7 @@ const SingleRecipe: React.FC = () => {
   if (!recipe)
     return (
       <div>
-        {singleRecipeNotFoundText}
+        {SINGLE_RECIPE_NOT_FOUND_TEXT}
         <br /> <p>{error}</p>
       </div>
     );

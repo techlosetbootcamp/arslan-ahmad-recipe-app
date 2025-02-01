@@ -3,7 +3,8 @@ import useSideBarHandler from "../../hooks/useSideBar";
 import { SidebarButton, Sidebar } from "./SidebarSetUp";
 import SeachBar from "../searchBar/SearchBar";
 import { NavLink } from "./NavLink";
-import { navItems, websiteTitle } from "../../constants/text";
+import { NAV_ITEMS } from "../../constants/text";
+import WEBSITE_LOGO from "/assets/icons/logo.svg";
 
 const Navbar = () => {
   const { isSidebarOpen, setSidebarOpen } = useSideBarHandler();
@@ -13,19 +14,14 @@ const Navbar = () => {
     <header className="bg-primary pt-[29px] sticky top-0 w-full z-20">
       <nav className="p-6 bg-white flex justify-between items-center shadow-sm">
         <Link to="/" className="flex justify-start items-center gap-x-2">
-          <img
-            className="w-[25px] h-[26px]"
-            src="/assets/icons/logo.svg"
-            alt="logo"
-          />
-          <span
-            className="hidden sm:inline-block font-[500] text-[26px]"
-            dangerouslySetInnerHTML={{ __html: websiteTitle }}
-          ></span>
+          <img className="w-[25px] h-[26px]" src={WEBSITE_LOGO} alt="logo" />
+          <span className="hidden sm:inline-block font-[500] text-nowrap text-[26px]">
+            Delícias à Mesa
+          </span>
         </Link>
 
         <div className="gap-4 hidden lg:flex">
-          {navItems.map((item, index) => (
+          {NAV_ITEMS.map((item, index) => (
             <NavLink
               key={index}
               itemKey={index}
@@ -46,7 +42,7 @@ const Navbar = () => {
       <Sidebar
         isSidebarOpen={isSidebarOpen}
         toggleSidebar={toggleSidebar}
-        navItems={navItems}
+        navItems={NAV_ITEMS}
       />
     </header>
   );
